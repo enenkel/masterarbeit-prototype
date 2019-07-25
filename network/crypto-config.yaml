@@ -1,0 +1,18 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: producer.com
+    Specs:
+      - Hostname: orderer
+PeerOrgs:
+  - Name: Producer
+    Domain: producer.com
+    Template:
+      Count: 2
+    Users:
+      Count: 2
+  - Name: Customer
+    Domain: customer.com
+    Template:
+      Count: 2
+    Users:
+      Count: 2

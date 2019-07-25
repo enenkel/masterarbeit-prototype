@@ -1,0 +1,14 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "gateway",
+  "main": "hyperledger-connector.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-network": "~1.4.0",
+    "fabric-client": "~1.4.0",
+    "js-yaml": "^3.12.0"
+  }
+}

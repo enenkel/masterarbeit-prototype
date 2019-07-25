@@ -1,0 +1,20 @@
+{
+  "name": "customer-app",
+  "version": "1.0.0",
+  "description": "Customer Application",
+  "main": "createOrder.js",
+  "scripts": {
+    "test": "rm -rf _idwallet && node addToWallet.js && node createOrder.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fabric-network": "~1.4.0",
+    "fabric-client": "~1.4.0",
+    "js-yaml": "^3.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0"
+  }
+}

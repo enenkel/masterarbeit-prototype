@@ -1,0 +1,4 @@
+node_modules
+customer/identity
+producer/identity
+gateway/node_modules

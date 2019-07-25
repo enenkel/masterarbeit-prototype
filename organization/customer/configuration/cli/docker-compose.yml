@@ -1,0 +1,29 @@
+version: '2'
+
+networks:
+  basic:
+    external:
+      name: net_basic
+
+services:
+  cliCustomer:
+    container_name: cliCustomer
+    image: hyperledger/fabric-tools
+    tty: true
+    environment:
+      - GOPATH=C:\Go
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - FABRIC_LOGGING_SPEC=debug
+      - CORE_PEER_ID=cliCustomer
+      - CORE_PEER_ADDRESS=peer0.customer.com:7051
+      - CORE_PEER_LOCALMSPID=CustomerMSP
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/customer.com/users/Admin@customer.com/msp
+      - CORE_CHAINCODE_KEEPALIVE=10
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: /bin/bash
+    volumes:
+      - //var/run/:/host/var/run/
+      - ./../../../../organization:/opt/gopath/src/github.com/
+      - ./../../../../network/crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+    networks:
+      - basic
